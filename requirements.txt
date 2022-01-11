@@ -1,2 +1,2 @@
-numpy==1.17.2
-pycuda==2020.1
+# numpy==1.17.2
+# pycuda==2020.1

@@ -30,13 +30,15 @@ ext_modules = [
         ],
         include_dirs=[
             pybind11.get_include(),
-            './apply/src'
+            './apply/src',
+            '/usr/local/Cellar/llvm/13.0.0_1/include/c++/v1'
         ],
         library_dirs=[
             '/usr/local/opt/llvm/lib',
+            "/usr/lib"
         ],
         libraries=['omp'],
-        extra_compile_args=['-std=c++11', '-fopenmp', '-fPIC', '-shared']
+        extra_compile_args=['-stdlib=libc++', '-lstdc++', '-fopenmp', '-fPIC', '-shared']
         # Example: passing in the version to the compiled code
         # define_macros=[('VERSION_INFO', __version__)],
     )
@@ -69,14 +71,14 @@ ext_modules = [
 # install
 # #############################################
 
-setup(name='apply',
+setup(name='pyrallel',
       version=__version__,
-      description='A simple autograd implementation based on PyTorch',
-      url='https://github.com/gusye1234/PyTrace',
+      description='A Exercise for Parallel Computing Course',
+      url='A Exercise for Parallel Computing Course',
       author="Jianbai Ye",
       author_email='jianbaiye@outlook.com',
       license='MIT',
-      packages=['apply'],
+      packages=['pyrallel'],
       ext_modules=ext_modules,
       cmdclass={"build_ext": build_ext},
       zip_safe=False
